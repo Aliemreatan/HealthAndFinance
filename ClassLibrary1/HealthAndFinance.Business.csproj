@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="ValidationRules\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HealthAndFinance.DataAccess\HealthAndFinance.DataAccess.csproj" />
+    <ProjectReference Include="..\HealthAndFinance.Entities\HealthAndFinance.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

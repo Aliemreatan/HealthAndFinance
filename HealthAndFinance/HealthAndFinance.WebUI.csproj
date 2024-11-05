@@ -6,4 +6,22 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HealthAndFinance.DataAccess\HealthAndFinance.DataAccess.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\materio-bootstrap-html-admin-template-free\assets\img\icons\unicons\" />
+    <Folder Include="wwwroot\materio-bootstrap-html-admin-template-free\assets\json\" />
+    <Folder Include="wwwroot\materio-bootstrap-html-admin-template-free\assets\svg\" />
+  </ItemGroup>
+
 </Project>
