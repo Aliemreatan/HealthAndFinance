@@ -15,7 +15,15 @@ namespace HealthAndFinance.Entities.Concrete
         public double? SleepHours { get; set; }
         public string? Notes { get; set; }
 
+        public int? Weight { get; set; }
+
+        public int? Height { get; set; }
+
+        public int? BKI { get; set; }
+
+        public bool? IsActive { get; set; }
+
         public required int UserId { get; set; }
-        public User? User { get; set; }
+        public AppUser? User { get; set; }
     }
 }

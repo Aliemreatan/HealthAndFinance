@@ -2,4 +2,35 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h1>Yeni Projem Health And Insurance</h1>
+<div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <div class="row gy-6">
+            @await Html.PartialAsync("~/Views/Home/DashboardCongratulationsCard.cshtml")
+
+            @await Html.PartialAsync("~/Views/Home/DashboardWeeklyOverviewChart.cshtml")
+            <!-- Four Cards -->
+            <div class="col-xl-4 col-md-6">
+                <div class="row gy-6">
+                    <!-- Total Profit line chart -->
+                    @await Html.PartialAsync("~/Views/Home/DashboardTotalProfitLineChart.cshtml")
+                    <!--/ Total Profit line chart -->
+                    <!-- Total Profit Weekly Project -->
+                    @await Html.PartialAsync("~/Views/Home/DashboardTotalProfitWeekly.cshtml")
+
+                    <!--/ Total Profit Weekly Project -->
+                    @await Html.PartialAsync("~/Views/Home/DashboardNewYearly.cshtml")
+
+                    <!-- Sessions chart -->
+                    @await Html.PartialAsync("~/Views/Home/DashboardSessionsChart.cshtml")
+
+                    <!--/ Sessions chart -->
+                </div>
+            </div>
+            <!--/ Total Earning -->
+            <!-- Deposit / Withdraw -->
+
+
+        </div>
+    </div>

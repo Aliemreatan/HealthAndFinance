@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HealthAndFinance.DataAccess.EntityFrameWork
 {
-    public class EfUserRepository : GenericRepository<AppUser>, IUserDal
+    public class EfHealthEntryRepository: GenericRepository<HealthEntry>, IHealthEntryDal
     {
     }
 }

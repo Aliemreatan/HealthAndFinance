@@ -15,10 +15,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\HealthAndFinance.Business.csproj" />
     <ProjectReference Include="..\HealthAndFinance.DataAccess\HealthAndFinance.DataAccess.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\Shared\Components\" />
     <Folder Include="wwwroot\materio-bootstrap-html-admin-template-free\assets\img\icons\unicons\" />
     <Folder Include="wwwroot\materio-bootstrap-html-admin-template-free\assets\json\" />
     <Folder Include="wwwroot\materio-bootstrap-html-admin-template-free\assets\svg\" />

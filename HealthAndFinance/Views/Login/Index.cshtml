@@ -1,16 +1,14 @@
 ﻿@using HealthAndFinance.WebUI.Models
-@model UserSignUpViewModel
+@model UserSignInViewModel
 @{
     Layout = null;
 }
-
-<!doctype html>
 
 <html lang="en"
       class="light-style layout-wide customizer-hide"
       dir="ltr"
       data-theme="theme-default"
-      data-assets-path="~/materio-bootstrap-html-admin-template-free/assets/"
+      data-assets-path="../assets/"
       data-template="vertical-menu-template-free"
       data-style="light">
 <head>
@@ -18,7 +16,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Register Health</title>
+    <title>Login Basic - Pages | Materio - Bootstrap Material Design Admin Template</title>
 
     <meta name="description" content="" />
 
@@ -61,58 +59,36 @@
     <div class="position-relative">
         <div class="authentication-wrapper authentication-basic container-p-y">
             <div class="authentication-inner py-6 mx-4">
-                <!-- Register Card -->
+                <!-- Login -->
                 <div class="card p-7">
                     <div class="card-body mt-1">
-                        <h4 class="mb-1">Adventure starts here 🚀</h4>
-                        <p class="mb-5">Make your app management easy and fun!</p>
+                        <h4 class="mb-1">Welcome to Materio! 👋🏻</h4>
+                        <p class="mb-5">Oturum Aç</p>
 
-                        <h3>Kayıt Ekranı</h3>
-                        <p>Yeni Bir Hesap Oluştur</p>
-                        <form class="m-t" role="form" asp-action="Index">
-                            
+                        <form method="post">
                             <div class="form-group">
-                                <span asp-validation-for="@Model.NameSurname" class="text-danger"></span>
-                                <input type="text" class="form-control" asp-for="@Model.NameSurname" placeholder="Adınız Soyadınız" required="" />
-                            </div>
-                            
-                            <div class="form-group">
-                                <span asp-validation-for="@Model.UserName" class="text-danger"></span>
-                                <input type="text" class="form-control" asp-for="@Model.UserName" placeholder="Kullanıcı Adınız" required="" />
-                            </div>
-                            
-                            <div class="form-group">
-                                <span asp-validation-for="@Model.Mail" class="text-danger"></span>
-                                <input type="email" class="form-control" asp-for="@Model.Mail" placeholder="Email" required="" />
-                            </div>
-                            
-                            <div class="form-group">
-                                <span asp-validation-for="@Model.Password" class="text-danger"></span>
-                                <input type="password" class="form-control" asp-for="@Model.Password" placeholder="Şifreniz" required="" />
-                            
+                                <label for="email mb-2">Kullanıcı Adınız</label>
+                                <input type="text" class="form-control" asp-for="@Model.username" id="email mb-2" aria-describeby="emailHelp" placeholder="" required="" />
                             </div>
                             <div class="form-group">
-                                <span asp-validation-for="@Model.ConfirmPassword" class="text-danger"></span>
-                                <input type="password" class="form-control" asp-for="@Model.ConfirmPassword" placeholder="Şifre Tekrarı" required="" />
-                            
+                                <label for="password mb-2">Şifreniz</label>
+                                <input type="password" class="form-control" asp-for="@Model.password" id="password mb-2" aria-describeby="passwordHelp" placeholder="" required="" />
                             </div>
-                            <div class="form-group">
-                                <div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Kullanım şartlarını okudum kabul ediyorum </label></div>
-                            </div>
-                            <button type="submit" class="btn btn-primary block full-width m-b">Kayıt Ol</button>
+                            <button type="submit" class="btn btn-primary submit mb-4">Giriş Yap</button>
 
-                            <p class="text-muted text-center"><small>Zaten bir hesabınız var mı?</small></p>
-                            <a class="btn btn-sm btn-white btn-block" href="/RegisterUser/Login/">Giriş Yap</a>
+                            <p class="text-center mb-5">
+                                <span>New on our platform?</span>
+                                <a href="/Register/Index/">
+                                    <span>Create an account</span>
+                                </a>
+                            </p>
 
-                            <div class="text-danger" asp-validation-summary="ModelOnly">
-                            </div>
                         </form>
 
                         
-
                     </div>
                 </div>
-                <!-- Register Card -->
+                <!-- /Login -->
                 <img src="~/materio-bootstrap-html-admin-template-free/assets/img/illustrations/tree-3.png"
                      alt="auth-tree"
                      class="authentication-image-object-left d-none d-lg-block" />
@@ -120,8 +96,8 @@
                      class="authentication-image d-none d-lg-block"
                      height="172"
                      alt="triangle-bg"
-                     data-app-light-img="~/materio-bootstrap-html-admin-template-freeillustrations/auth-basic-mask-light.png"
-                     data-app-dark-img="~/materio-bootstrap-html-admin-template-freeillustrations/auth-basic-mask-dark.png" />
+                     data-app-light-img="illustrations/auth-basic-mask-light.png"
+                     data-app-dark-img="illustrations/auth-basic-mask-dark.png" />
                 <img src="~/materio-bootstrap-html-admin-template-free/assets/img/illustrations/tree.png"
                      alt="auth-tree"
                      class="authentication-image-object-right d-none d-lg-block" />
@@ -130,8 +106,7 @@
     </div>
 
     <!-- / Content -->
-
-    <!-- Core JS -->
+	<!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src="~/materio-bootstrap-html-admin-template-free/assets/vendor/libs/jquery/jquery.js"></script>
     <script src="~/materio-bootstrap-html-admin-template-free/assets/vendor/libs/popper/popper.js"></script>

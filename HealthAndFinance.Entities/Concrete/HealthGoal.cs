@@ -16,6 +16,6 @@ namespace HealthAndFinance.Entities.Concrete
         public bool IsAchieved { get; set; } = false;
 
         public required int UserId { get; set; }
-        public User? User { get; set; }
+        public AppUser? User { get; set; }
     }
 }

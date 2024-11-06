@@ -11,7 +11,7 @@ namespace HealthAndFinance.Entities.Concrete
     {
         [Key]
         public int Id { get; set; }
-        public static double CalculateAverageSteps(User user, DateTime startDate, DateTime endDate)
+        public static double CalculateAverageSteps(AppUser user, DateTime startDate, DateTime endDate)
         {
             var steps = user.HealthEntries
                                 .Where(entry => entry.Date >= startDate && entry.Date <= endDate && entry.Steps.HasValue)

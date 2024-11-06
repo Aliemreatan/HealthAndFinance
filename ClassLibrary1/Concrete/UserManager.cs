@@ -18,29 +18,29 @@ namespace HealthAndFinance.Business.Concrete
             _userDal = userDal;
         }
 
-        public User GetById(int id)
+        public AppUser GetById(int id)
         {
             return _userDal.GetById(id);
         }
 
-        public List<User> GetList()
+        public List<AppUser> GetList()
         {
             throw new NotImplementedException();
         }
 
-        public void TAdd(User t)
+        public void TAdd(AppUser t)
+        {
+            _userDal.Insert(t);
+        }
+
+        public void TDelete(AppUser t)
         {
             throw new NotImplementedException();
         }
 
-        public void TDelete(User t)
+        public void TUpdate(AppUser t)
         {
-            throw new NotImplementedException();
-        }
-
-        public void TUpdate(User t)
-        {
-            throw new NotImplementedException();
+            _userDal.Update(t);
         }
     }
 }

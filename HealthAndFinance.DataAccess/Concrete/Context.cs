@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 
 namespace HealthAndFinance.DataAccess.Concrete
 {
-    public class Context : IdentityDbContext<User, AppRole, int>
+    public class Context : IdentityDbContext<AppUser, AppRole, int>
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
         {
             optionsBuilder.UseSqlServer("server=DESKTOP-VLIOH37;database=HealthAndFinance;integrated security=true;Trust Server Certificate=true;");
             base.OnConfiguring(optionsBuilder);
         }
+        
 
         public DbSet<HealthAnalyzer> HealthAnalyzers { get; set; }
         public DbSet<HealthEntry> HealthEntries { get; set; }

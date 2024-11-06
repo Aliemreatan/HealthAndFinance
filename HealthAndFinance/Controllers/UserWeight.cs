@@ -1,19 +1,10 @@
-using HealthAndFinance.DataAccess.Concrete;
-using HealthAndFinance.Models;
+﻿using HealthAndFinance.DataAccess.Concrete;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
-namespace HealthAndFinance.Controllers
+namespace HealthAndFinance.WebUI.Controllers
 {
-    public class HomeController : Controller
+    public class UserWeight : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
             Context c = new Context();
@@ -23,15 +14,15 @@ namespace HealthAndFinance.Controllers
 
             var userid = c.Users.Where(x => x.Email == usermail).Select(y => y.Email).FirstOrDefault();
 
-            
+
             ViewBag.Name = username;
-            
-           
+
             return View();
         }
 
-
-
-
+        public IActionResult HealthAdd()
+        {
+            return View();
+        }
     }
 }

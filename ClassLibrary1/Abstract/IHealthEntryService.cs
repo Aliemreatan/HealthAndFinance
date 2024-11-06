@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HealthAndFinance.Business.Abstract
 {
-    public interface IUserService : IGenericService<AppUser>
+    public interface IHealthEntryService: IGenericService<HealthEntry>
     {
     }
 }

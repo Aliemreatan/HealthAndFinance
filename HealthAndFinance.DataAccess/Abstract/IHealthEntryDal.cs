@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HealthAndFinance.Business.Abstract
+namespace HealthAndFinance.DataAccess.Abstract
 {
-    public interface IUserService : IGenericService<AppUser>
+    public interface IHealthEntryDal : IGenericDal<HealthEntry>
     {
     }
 }

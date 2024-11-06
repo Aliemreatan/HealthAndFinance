@@ -1,3 +1,9 @@
+using HealthAndFinance.DataAccess.Concrete;
+using HealthAndFinance.Entities.Concrete;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
+
 namespace HealthAndFinance
 {
     public class Program
@@ -8,6 +14,33 @@ namespace HealthAndFinance
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<Context>();
+            builder.Services.AddIdentity<AppUser, AppRole>(x =>
+            {
+                x.Password.RequireUppercase = false;
+                x.Password.RequireNonAlphanumeric = false;
+            })
+                .AddEntityFrameworkStores<Context>();
+
+            builder.Services.AddControllersWithViews();
+            builder.Services.AddSession();
+            builder.Services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                .RequireAuthenticatedUser()
+                .Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
+            builder.Services.AddMvc();
+            builder.Services.AddAuthentication(
+                CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x =>
+                {
+                    x.LoginPath = "/Login/Index";
+                });
+
+
+
 
             var app = builder.Build();
 
