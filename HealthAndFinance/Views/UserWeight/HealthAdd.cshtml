@@ -1,0 +1,35 @@
+﻿@using HealthAndFinance.Entities.Concrete
+@model HealthAndFinance.Entities.Concrete.HealthEntry
+@{
+    ViewData["Title"] = "HealthAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Yeni Bilgiler Girişi</h1>
+<br />
+
+<form method="post">
+
+    <label>Kilonuz</label>
+    <input type="text" asp-for="@Model.Height" class="form-control" />
+    <br />
+
+    <label>Boyunuz</label>
+    <input type="text" asp-for="@Model.Weight" class="form-control" />
+    <br />
+
+    <label>Kilonuz</label>
+    <input type="text" asp-for="@Model.SleepHours" class="form-control" />
+    <br />
+
+    <label>Not</label>
+    <input type="text" asp-for="@Model.Notes" class="form-control" />
+    <br />
+
+    <label>Kullanıcı Idniz</label>
+    <input type="text" asp-for="@Model.UserId" class="form-control" />
+    <br />
+    
+
+    <button type="submit" class="btn btn-info">Bilgilerinizi Ekleyin</button>
+</form>
