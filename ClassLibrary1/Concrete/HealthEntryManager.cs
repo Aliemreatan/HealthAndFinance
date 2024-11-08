@@ -28,6 +28,11 @@ namespace HealthAndFinance.Business.Concrete
             return _hDal.GetListAll();
         }
 
+        public List<HealthEntry> GetListWithUser(int id)
+        {
+            return _hDal.GetListWithUser(id);
+        }
+
         public void TAdd(HealthEntry t)
         {
             _hDal.Insert(t);

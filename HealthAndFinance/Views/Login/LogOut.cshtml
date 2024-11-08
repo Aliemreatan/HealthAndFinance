@@ -1,0 +1,24 @@
+﻿<li>
+    <div class="d-grid px-4 pt-2 pb-1">
+        <a id="logoutButton" class="btn btn-danger d-flex" href="#">
+            <small class="align-middle">Logout</small>
+            <i class="ri-logout-box-r-line ms-2 ri-16px"></i>
+        </a>
+    </div>
+</li>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.getElementById("logoutButton").addEventListener("click", function (e) {
+        e.preventDefault(); 
+        Swal.fire({
+            title: 'Oturumunuz kapatılıyor...',
+            text: 'Lütfen bekleyiniz',
+            icon: 'info',
+            timer: 2000, 
+            showConfirmButton: false
+        }).then(() => {
+            window.location.href = '/Login/Logout/'; 
+        });
+    });
+</script>

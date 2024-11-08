@@ -36,7 +36,7 @@ namespace HealthAndFinance
             builder.Services.AddAuthentication(
                 CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x =>
                 {
-                    x.LoginPath = "/Login/Index";
+                    x.LoginPath = "/Login/Index/";
                 });
 
 
@@ -54,6 +54,8 @@ namespace HealthAndFinance
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseRouting();
 

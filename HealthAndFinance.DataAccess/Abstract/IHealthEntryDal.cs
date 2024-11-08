@@ -9,5 +9,6 @@ namespace HealthAndFinance.DataAccess.Abstract
 {
     public interface IHealthEntryDal : IGenericDal<HealthEntry>
     {
+        List<HealthEntry> GetListWithUser(int id);
     }
 }

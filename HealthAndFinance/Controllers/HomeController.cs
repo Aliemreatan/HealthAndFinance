@@ -30,6 +30,11 @@ namespace HealthAndFinance.Controllers
             return View();
         }
 
+        public PartialViewResult NavBar()
+        {
+            return PartialView();
+        }
+
 
 
 

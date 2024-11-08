@@ -1,35 +1,38 @@
-﻿@using HealthAndFinance.Entities.Concrete
-@model HealthAndFinance.Entities.Concrete.HealthEntry
+﻿@model IEnumerable<HealthAndFinance.Entities.Concrete.HealthEntry>
 @{
     ViewData["Title"] = "HealthAdd";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<h2>Sağlık Bilgileriniz</h2>
 
-<h1>Yeni Bilgiler Girişi</h1>
-<br />
-
-<form method="post">
-
-    <label>Kilonuz</label>
-    <input type="text" asp-for="@Model.Height" class="form-control" />
-    <br />
-
-    <label>Boyunuz</label>
-    <input type="text" asp-for="@Model.Weight" class="form-control" />
-    <br />
-
-    <label>Kilonuz</label>
-    <input type="text" asp-for="@Model.SleepHours" class="form-control" />
-    <br />
-
-    <label>Not</label>
-    <input type="text" asp-for="@Model.Notes" class="form-control" />
-    <br />
-
-    <label>Kullanıcı Idniz</label>
-    <input type="text" asp-for="@Model.UserId" class="form-control" />
-    <br />
-    
-
-    <button type="submit" class="btn btn-info">Bilgilerinizi Ekleyin</button>
-</form>
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Steps</th>
+            <th>Calories Burned</th>
+            <th>Sleep Hours</th>
+            <th>Notes</th>
+            <th>Weight</th>
+            <th>Height</th>
+            <th>BKI</th>
+            <th>IsActive</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var entry in Model)
+        {
+            <tr>
+                <td>@entry.Date</td>
+                <td>@entry.Steps</td>
+                <td>@entry.CaloriesBurned</td>
+                <td>@entry.SleepHours</td>
+                <td>@entry.Notes</td>
+                <td>@entry.Weight</td>
+                <td>@entry.Height</td>
+                <td>@entry.BKI</td>
+                <td>@entry.IsActive</td>
+            </tr>
+        }
+    </tbody>
+</table>

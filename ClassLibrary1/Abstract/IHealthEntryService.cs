@@ -9,5 +9,6 @@ namespace HealthAndFinance.Business.Abstract
 {
     public interface IHealthEntryService: IGenericService<HealthEntry>
     {
+        List<HealthEntry> GetListWithUser(int id);
     }
 }

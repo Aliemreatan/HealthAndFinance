@@ -1,0 +1,30 @@
+﻿@using HealthAndFinance.WebUI.Models
+@model HealthEntryViewModel
+
+<h3>Kayıt Ekranı</h3>
+<h1>@ViewBag.name</h1>
+<p>Bilgilerinizi Ekleyin</p>
+<form class="m-t" role="form" asp-action="Index">
+
+    <div class="form-group">
+        <span asp-validation-for="@Model.SleepHours" class="text-danger"></span>
+        <input type="number" class="form-control" asp-for="@Model.SleepHours" placeholder="Uyuma Saatiniz" required="" />
+    </div>
+
+    <div class="form-group">
+        <span asp-validation-for="@Model.Weight" class="text-danger"></span>
+        <input type="number" class="form-control" asp-for="@Model.Weight" placeholder="Kilonuz" required="" />
+    </div>
+
+    <div class="form-group">
+        <span asp-validation-for="@Model.Height" class="text-danger"></span>
+        <input type="number" class="form-control" asp-for="@Model.Height" placeholder="Boyunuz" required="" />
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="@Model.Notes" class="text-danger"></span>
+        <input type="text" class="form-control" asp-for="@Model.Notes" placeholder="Notlarınız" required="" />
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary block full-width m-b">Kayıt Ol</button>
+</form>

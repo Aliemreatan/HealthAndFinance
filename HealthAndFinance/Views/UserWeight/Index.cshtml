@@ -1,8 +1,16 @@
-﻿
+﻿@using HealthAndFinance.Entities.Concrete
+@model List<HealthEntry>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Bilgileriniz.</h1>
+<h2>Adınız @ViewBag.name</h2>
+
+
+
+
+
+
 <button class="btn btn-info" href="~/Views/Home/HealthAdd/">Bilgi Ekle</button>

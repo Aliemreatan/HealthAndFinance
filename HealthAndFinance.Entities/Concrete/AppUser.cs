@@ -13,7 +13,9 @@ namespace HealthAndFinance.Entities.Concrete
     {
         
         public string NameSurname { get; set; }
-        public List<HealthEntry> HealthEntries { get; set; } = new();
+
+		
+		public List<HealthEntry> HealthEntries { get; set; } = new();
         public List<HealthGoal> HealthGoals { get; set; } = new();
     }
 }
